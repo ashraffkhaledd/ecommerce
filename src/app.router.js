@@ -14,7 +14,13 @@ export const appRouter = (app,express)=>{
     app.use(morgan("common"));
 
     //Global middleware
-    app.use(express.json()); //parse "req.body" buffer to json 
+    app.use((req,res,next)=>{
+        // req.originalUrl'
+        if (req.originalUrl === "/order/webhook"){
+            return next();
+        }
+        express.json()(req,res,next)
+    }); //parse "req.body" buffer to json 
     //routes
     //patient
     app.use("/auth",authRouter);
