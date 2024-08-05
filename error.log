@@ -1,0 +1,12 @@
+2024-07-30T13:54:03.589Z [error]: jwt expired
+TokenExpiredError: jwt expired
+    at C:\Users\ashraf\Desktop\projects\ecommercee\node_modules\jsonwebtoken\verify.js:190:21
+    at getSecret (C:\Users\ashraf\Desktop\projects\ecommercee\node_modules\jsonwebtoken\verify.js:97:14)
+    at module.exports [as verify] (C:\Users\ashraf\Desktop\projects\ecommercee\node_modules\jsonwebtoken\verify.js:101:10)
+    at file:///C:/Users/ashraf/Desktop/projects/ecommercee/src/middleware/authentication.middleware.js:13:25
+    at file:///C:/Users/ashraf/Desktop/projects/ecommercee/src/utils/asyncHandler.js:3:9
+    at Layer.handle [as handle_request] (C:\Users\ashraf\Desktop\projects\ecommercee\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ashraf\Desktop\projects\ecommercee\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\ashraf\Desktop\projects\ecommercee\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\ashraf\Desktop\projects\ecommercee\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\ashraf\Desktop\projects\ecommercee\node_modules\express\lib\router\index.js:284:15 
