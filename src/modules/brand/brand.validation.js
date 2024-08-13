@@ -4,7 +4,7 @@ import { isValidObjectId } from "../../middleware/validation.middleware.js";
 // create brand
 export const createbrandSchema = joi.object({
     name: joi.string().min(4).max(15).required(), 
-    categoryId:joi.string().custom(isValidObjectId)
+    categoryId:joi.string().custom(isValidObjectId).required()
 }) 
 .required();
 

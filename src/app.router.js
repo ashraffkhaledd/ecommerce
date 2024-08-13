@@ -6,6 +6,7 @@ import productRouter from "./modules/product/product.router.js"
 import couponRouter from "./modules/coupon/coupon.router.js"
 import cartRouter from "./modules/cart/cart.router.js"
 import orderRouter from "./modules/order/order.router.js"
+import reviewRouter from "./modules/review/review.router.js"
 import morgan from "morgan"
 
 export const appRouter = (app,express)=>{
@@ -22,7 +23,7 @@ export const appRouter = (app,express)=>{
         express.json()(req,res,next)
     }); //parse "req.body" buffer to json 
     //routes
-    //patient
+    // auth
     app.use("/auth",authRouter);
     // catogory
     app.use("/category",categoryRouter);
@@ -37,13 +38,16 @@ export const appRouter = (app,express)=>{
     app.use("/product" , productRouter);
 
     //coupon
-    app.use("/coupon", couponRouter)
+    app.use("/coupon", couponRouter);
 
     //cart
-    app.use ("/cart",cartRouter)
+    app.use ("/cart",cartRouter);
 
     //order
-    app.use ("/order",orderRouter)
+    app.use ("/order",orderRouter);
+
+    //review
+    app.use ("/review" , reviewRouter); 
 
     //not found page router
     app.all("*",(req,res,next)=>{
