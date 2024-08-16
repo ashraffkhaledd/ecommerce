@@ -8,6 +8,7 @@ import cartRouter from "./modules/cart/cart.router.js"
 import orderRouter from "./modules/order/order.router.js"
 import reviewRouter from "./modules/review/review.router.js"
 import morgan from "morgan"
+import logger from "./services/logger.services.js"
 
 export const appRouter = (app,express)=>{
     //morgan
@@ -55,6 +56,7 @@ export const appRouter = (app,express)=>{
     
     //global error handler
     app.use((error,req,res,next)=>{
+        logger.error(`${error.message}\n${error.stack}`);
         return res.status(error.cause|| 500).json({success:false, message:error.message, stack:error.stack});
     })    
 }
