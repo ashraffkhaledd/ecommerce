@@ -1,28 +1,24 @@
-import mongoose,{Schema,Types,model} from "mongoose"
+import mongoose, { Schema, Types, model } from "mongoose"
 
 //schema
 const tokenSchema = new Schema({
-    token:{
+    token: {
         type: String,
         required: true
     },
-    Patient: {
+    user: {
         type: Types.ObjectId,
-        ref:"Patient"
+        ref: "User"
     },
-    Doctor: {
-        type: Types.ObjectId,
-        ref:"Doctor"
-    },
-    isValid:{
-        type:Boolean,
-        default:true
+    isValid: {
+        type: Boolean,
+        default: true
     },
     agent: { //name
         type: String
     },
-    expiredAt:{type:String}
-},{timestamps: true})
+    expiredAt: { type: String }
+}, { timestamps: true })
 
 //model
-export const Token = mongoose.model.Token || model("Token",tokenSchema)
+export const Token = mongoose.model.Token || model("Token", tokenSchema)
